@@ -17,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import GoogleSignIn from "@/components/custom/auth/GoogleSignIn";
 import { LoaderCircle } from "lucide-react";
-import { useEmailPasswordSignIn } from "@/lib/hooks/useEmailPasswordSignIn";
+import { useEmailPasswordSignIn } from "@/lib/hook/useEmailPasswordSignIn";
 
 const SigninPage = () => {
   const router = useRouter();
