@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { EXCHANGE_PUB_TOKEN } from "@/lib/graphql/Plaid";
 import { useMutation, gql } from "@apollo/client";
-import { UPSERT_TRANSACTIONS } from "@/lib/graphql/Transaction";
+import { UPSERT_TRANSACTIONS_FROM_PLAID } from "@/lib/graphql/Transaction";
 
 interface PlaidAuthProps {
   pubToken: string;
@@ -19,7 +19,7 @@ export function PlaidAuth({ pubToken, userId }: PlaidAuthProps) {
       loading: transactionsLoading,
       error: transactionsError,
     },
-  ] = useMutation(UPSERT_TRANSACTIONS, {
+  ] = useMutation(UPSERT_TRANSACTIONS_FROM_PLAID, {
     onCompleted: () => console.log({ transactionData })
   });
 
