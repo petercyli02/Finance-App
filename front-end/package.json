@@ -97,7 +97,7 @@
     "postcss-loader": "^8.1.1",
     "prisma": "^5.19.1",
     "style-loader": "^4.0.0",
-    "tailwindcss": "^4.1.10",
+    "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "webpack": "^5.98.0"
