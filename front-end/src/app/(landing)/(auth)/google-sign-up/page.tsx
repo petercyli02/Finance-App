@@ -112,28 +112,26 @@ const SignUpPage = () => {
   };
 
   return (
-    <Suspense fallback={<div className="w-full text-center">Loading...</div>}>
-      <>
-        <h2 className="text-3xl text-center font-bold mb-6">
-          {authData.currentUser
-            ? "Complete the sign up for your account"
-            : "Signing in with Google..."}
-        </h2>
+    <>
+      <h2 className="text-3xl text-center font-bold mb-6">
+        {authData.currentUser
+          ? "Complete the sign up for your account"
+          : "Signing in with Google..."}
+      </h2>
 
-        {authData.currentUser && (
-          <GoogleSignUpForm
-            form={form}
-            onSubmit={onSubmit}
-            isSubmitting={submitting}
-          />
-        )}
-        {errorMessage && (
-          <div className="flex items-center p-4 mt-8 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800">
-            <p>{errorMessage}</p>
-          </div>
-        )}
-      </>
-    </Suspense>
+      {authData.currentUser && (
+        <GoogleSignUpForm
+          form={form}
+          onSubmit={onSubmit}
+          isSubmitting={submitting}
+        />
+      )}
+      {errorMessage && (
+        <div className="flex items-center p-4 mt-8 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800">
+          <p>{errorMessage}</p>
+        </div>
+      )}
+    </>
   );
 };
 
