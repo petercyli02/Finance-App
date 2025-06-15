@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import "@/app/globals.css";
 import { useAuth } from "@/lib/contexts/authContext";
