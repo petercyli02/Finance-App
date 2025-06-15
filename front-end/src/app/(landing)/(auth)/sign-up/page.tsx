@@ -17,7 +17,7 @@ import { z } from "zod";
 import { EmailSignUpForm } from "@/components/custom/auth/EmailSignUpForm";
 import GoogleSignIn from "@/components/custom/auth/GoogleSignIn";
 
-export const emailSignUpFormSchema = z
+const emailSignUpFormSchema = z
   .object({
     firstName: z.string(),
     lastName: z.string(),
