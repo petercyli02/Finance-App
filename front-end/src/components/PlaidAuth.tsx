@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { EXCHANGE_PUB_TOKEN } from "@/lib/graphql/Plaid";
 import { useMutation, gql } from "@apollo/client";
-import { argsToArgsConfig } from "graphql/type/definition";
-import { AccessToken } from "../../../backend/api/graphql/Plaid";
 import { UPSERT_TRANSACTIONS } from "@/lib/graphql/Transaction";
 
 interface PlaidAuthProps {

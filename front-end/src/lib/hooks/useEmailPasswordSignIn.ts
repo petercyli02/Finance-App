@@ -3,14 +3,14 @@ import {
 } from "@firebase/auth";
 import { ApolloError, useLazyQuery } from "@apollo/client";
 import { GET_SINGLE_USER_BY_UID } from "@/lib/graphql/Users";
-import { NexusGenObjects } from "@/../../backend/nexus-typegen";
 import { auth } from "../firebase/firebase";
+import { User } from "@/__generated__/graphql";
 
 export const useEmailPasswordSignIn = (): {
   emailPasswordSignIn: (
     email: string, password: string
   ) => Promise<{
-      user: NexusGenObjects["User"] | null;
+      user: User | null;
       errorCode: string | null;
       errorMessage: string | null;
     }
