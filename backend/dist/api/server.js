@@ -1,12 +1,15 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.server = void 0;
-// api/server.ts
-const apollo_server_1 = require("apollo-server");
-const context_1 = require("./context");
-const schema_1 = require("./schema");
-exports.server = new apollo_server_1.ApolloServer({
-    schema: schema_1.schema,
-    context: context_1.context
-});
+// // api/server.ts
+// import { ApolloServer } from '@apollo/server'
+// import { context } from './context'
+// import { schema } from './schema'
+// import { startStandaloneServer } from '@apollo/server/standalone';
+// export const server = new ApolloServer({ 
+//     schema, 
+// })
+// const { url } = await startStandaloneServer(server, {
+//     context: async ({ req }) => ({ token: req.headers.token }),
+//     listen: { port: 4000 },
+//   });
+//   console.log(`🚀  Server ready at ${url}`);
 //# sourceMappingURL=server.js.map

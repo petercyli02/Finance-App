@@ -13,11 +13,9 @@ import { plaidClient } from "../config/PlaidConfiguration";
 import dayjs from "dayjs";
 import {
   TransactionsGetRequest,
-  TransactionsRuleField,
-  TransferDocumentPurpose,
 } from "plaid";
 import { categoriseTransactions } from "../services/autoCategorisation";
-import { Category } from "./Category";
+import { Transaction as TransactionType } from "@prisma/client";
 
 export const Transaction = objectType({
   name: "Transaction",
@@ -339,7 +337,7 @@ export const TransactionMutations = extendType({
           },
         });
         const updatedTransactions = await Promise.all(
-          transactions.map((transaction) =>
+          transactions.map((transaction: TransactionType) =>
             ctx.db.transaction.update({
               where: {
                 id: transaction.id,
@@ -418,7 +416,7 @@ export const TransactionMutations = extendType({
         });
 
         const transactionCategoryIdPairs = await categoriseTransactions(
-          transactions.filter((transaction) =>
+          transactions.filter((transaction: TransactionType) =>
             args.overwrite || !!!transaction.categoryId ? true : false
           ),
           10,
