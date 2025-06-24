@@ -40,7 +40,7 @@ export const ProfilePicture = ({ className, userId }: Props) => {
     uppyRef.current.use(AwsS3, {
       shouldUseMultipart: false,
       getUploadParameters(file) {
-        return fetch(`${process.env.NEXT_SERVER_URL}/graphql`, {
+        return fetch(`${process.env.NEXT_SERVER_URL}graphql`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
