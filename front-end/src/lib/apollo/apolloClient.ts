@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 function createApolloClient() {
   const client = new ApolloClient({
     link: new HttpLink({
-      uri: `https://finapp.us-east-1.elasticbeanstalk.com/graphql`,
+      uri: `http://ec2-44-207-3-77.compute-1.amazonaws.com:4000/graphql`,
     }),
     cache: new InMemoryCache(),
   });
